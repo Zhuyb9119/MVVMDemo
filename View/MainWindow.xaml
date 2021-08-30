@@ -1,0 +1,54 @@
+﻿<Window
+    x:Class="MVVMDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MVVMDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Weather"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="WeatherFont" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontFamily" Value="微软雅黑" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="5">
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.CityName}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.CenterName}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.State1}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.State2}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.StateDetailed}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.Tem1}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.Tem2}" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="5">
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.TemNow}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.WindState}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.WindDir}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.WindPower}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.Humidity}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.Time}" />
+            <TextBlock Style="{StaticResource WeatherFont}" Text="{Binding Weather.Url}" />
+        </StackPanel>
+    </Grid>
+</Window>
